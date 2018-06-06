@@ -665,6 +665,10 @@ a:hover, a:focus {
   color: rgba(255, 255, 255, 0.75) !important;
   font-size: 12px;
   padding: 9px;
+
+  &:hover {
+    background-color: transparent !important;
+  }
 }
 .panel_toolbox {
   float: right;

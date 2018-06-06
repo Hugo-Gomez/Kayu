@@ -890,9 +890,12 @@ a:focus {
 
 .nav.child_menu > li > a {
   color: rgba(255, 255, 255, 0.75) !important;
-  background-color: none !important;
   font-size: 12px;
   padding: 9px;
+}
+
+.nav.child_menu > li > a:hover {
+  background-color: transparent !important;
 }
 
 .panel_toolbox {
