@@ -18,7 +18,13 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->string("pwd_salt");
+            $table->boolean("palmOil");
+            $table->integer("caloriesMax");
             $table->string("salt");
+            $table->string("sugar");
+            $table->string("fat");
+            $table->string("saturedFat");
             $table->rememberToken();
             $table->timestamps();
         });
