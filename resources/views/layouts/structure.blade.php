@@ -7,10 +7,12 @@
 
         <title>Kayu</title>
 
+        <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.min.css') }}" />
         <link rel="stylesheet" href="{{ URL::asset('css/custom.css') }}" />
         <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}" />
         <link rel="stylesheet" href="{{ URL::asset('css/fontawesome-all.css') }}" />
-        <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.min.css') }}" />
+
+
 
         {{-- <link rel="stylesheet" href="{{ URL::asset('css/daterangepicker.css') }}" /> --}}
         {{-- <link rel="stylesheet" href="{{ URL::asset('css/animate.min.css') }}" /> --}}
@@ -27,9 +29,9 @@
                     <div class="navbar nav_title" style="border: 0;">
                         <span class="site_title">Kayu</span>
                     </div>
-        
+
                     <div class="clearfix"></div>
-        
+
                     <!-- menu profile quick info -->
                     <div class="profile clearfix">
                         <div class="profile_pic">
@@ -41,9 +43,9 @@
                         </div>
                     </div>
                     <!-- /menu profile quick info -->
-        
+
                     <br />
-        
+
                     <!-- sidebar menu -->
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                         <div class="menu_section">
@@ -53,19 +55,19 @@
                             <li><a><i class="fa fa-sliders-h"></i> Préférences <span class="fa fa-chevron-down"></span></a>
                             <ul class="nav child_menu">
                                 <li><a>Roles</a></li>
-                                <li><a>Mes préférences</a></li>
+                                <li><a href="{{ url('formpref') }}">Mes préférences</a></li>
                             </ul>
                             </li>
                             <li><a><i class="fa fa-shopping-basket"></i> Derniers scans </a>
                             </li>
                         </ul>
                         </div>
-        
+
                     </div>
                     <!-- /sidebar menu -->
                     </div>
                 </div>
-        
+
                 <!-- top navigation -->
                 <div class="top_nav">
                     <div class="nav_menu">
@@ -73,7 +75,7 @@
                         <div class="nav toggle">
                         <a id="menu_toggle"><i class="fa fa-bars"></i></a>
                         </div>
-        
+
                         <ul class="nav navbar-nav navbar-right">
                         <li class="">
                             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -91,7 +93,7 @@
                             </li>
                             </ul>
                         </li>
-        
+
                         {{-- <li role="presentation" class="dropdown">
                             <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
                             <i class="fa fa-envelope-o"></i>
