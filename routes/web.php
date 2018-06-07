@@ -21,3 +21,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/formpref', 'FormPrefController@index')->name('preferences');
 Route::post('/formpref', 'FormPrefController@formok')->name('preferences');
+
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
