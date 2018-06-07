@@ -48,7 +48,7 @@
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                         <div class="menu_section">
                         <ul class="nav side-menu">
-                            <li><a><i class="fa fa-tachometer-alt"></i> Dashboard </a>
+                        <li class="dashboard-menu"><a href="{{ route('dashboard') }}"><i class="fa fa-tachometer-alt"></i> Dashboard </a>
                             </li>
                             <li><a><i class="fa fa-sliders-h"></i> Préférences <span class="fa fa-chevron-down"></span></a>
                             <ul class="nav child_menu">
