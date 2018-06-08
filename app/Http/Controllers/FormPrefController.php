@@ -49,6 +49,8 @@ class FormPrefController extends Controller
       $inputs['fat'] = Input::get('fat');
       $inputs['saturedFat'] = Input::get('saturedFat');
 
+      $inputs['additives'] = Input::get('additives');
+
 
       DB::table('users')->where('id', '=', $user->id)->update($inputs);
 

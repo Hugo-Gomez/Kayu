@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->string("sugar")->nullable(true);
             $table->string("fat")->nullable(true);
             $table->string("saturedFat")->nullable(true);
+            $table->string("additives")->nullable(true);
             $table->rememberToken();
             $table->timestamps();
         });
