@@ -162,9 +162,10 @@
                     </div>
                 </div>
                 <!-- /top navigation -->
-
-                @section('content')
-                @show
+                <div class="right_col">
+                  @section('content')
+                  @show
+                </div>
 
                 </div>
             </div>
