@@ -56,6 +56,5 @@
         "optimize-autoloader": true
     },
     "minimum-stability": "dev",
-    "prefer-stable": true,
-    "laravelcollective/html": "~5.0"
+    "prefer-stable": true
 }
