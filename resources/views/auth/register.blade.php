@@ -2,10 +2,13 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
+    <h1 style="text-align:center;"><a href="{{ route('welcome') }}">KAYU</a></h1>
+    <p style="text-align:center;">L'application attentive à votre consommation</p>
+    <hr>
+    <div class="row justify-content-center" style="display:flex;justify-content:center;height:100vh;margin-top:10vh;">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+            <div class="x_panel">
+                <div class="x_title"><h3>{{ __('Register') }}</h3></div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
