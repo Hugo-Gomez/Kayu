@@ -21,3 +21,8 @@ Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
 Route::get('/formpref', 'FormPrefController@index')->name('preferences');
 Route::post('/formpref', 'FormPrefController@formok')->name('preferences');
+
+Route::get('/api/userpref/{id}', function ($id) {
+    $user = App\User::findOrFail($id);
+    return $user;
+});
