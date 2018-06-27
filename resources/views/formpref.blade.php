@@ -84,7 +84,7 @@
                     <div class="form-group row">
                       {{ Form::label('additives', 'Rejet des additifs', array('class' => 'control-label col-md-3 col-sm-3 col-xs-12')) }}
                       <div class="col-md-5 col-sm-7 col-xs-12">
-                        {{ Form::select('additives', array('nothing' => 'Indifférent / Pas de rejet', 'harmful' => 'Rejet des additifs nocifs', 'dangerous' => 'Rejet des additifs nocifs et douteux'), $user->additives, array('class' => 'form-control')) }}
+                        {{ Form::select('additives', array('nothing' => 'Aucun', 'toxic' => 'Toxiques', 'dangerous' => 'Toxiques et douteux'), $user->additives, array('class' => 'form-control')) }}
                       </div>
                     </div>
 

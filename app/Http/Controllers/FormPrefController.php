@@ -51,6 +51,7 @@ class FormPrefController extends Controller
 
       $inputs['additives'] = Input::get('additives');
 
+      $inputs['updated_at'] = new \DateTime("now", new \DateTimeZone('Europe/Paris'));
 
       DB::table('users')->where('id', '=', $user->id)->update($inputs);
 

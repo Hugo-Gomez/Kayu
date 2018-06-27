@@ -22,8 +22,3 @@ Route::get('/history', 'ScanHistoryController@index')->name('history');
 
 Route::get('/formpref', 'FormPrefController@index')->name('preferences');
 Route::post('/formpref', 'FormPrefController@formok')->name('preferences');
-
-Route::get('/api/userpref/{id}', function ($id) {
-    $user = App\User::findOrFail($id);
-    return $user;
-});

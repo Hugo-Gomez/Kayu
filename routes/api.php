@@ -13,6 +13,13 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::get('/user/{id}/preferences', 'API\UserAPIController@getPreferences');
+Route::put('/user/{id}/preferences', 'API\UserAPIController@updatePreferences');
+
+Route::get('/user/{id}/products/history', 'API\ProductController@getHistory');
+Route::post('/user/{id}/products/add', 'API\ProductController@addProduct');
+
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
