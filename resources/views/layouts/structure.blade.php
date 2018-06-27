@@ -53,7 +53,7 @@
                             </li>
                             <li><a href="{{ url('formpref') }}"><i class="fa fa-sliders-h"></i> Mes Préférences </a>
                             </li>
-                            <li><a><i class="fa fa-shopping-basket"></i> Derniers scans </a>
+                            <li><a href="{{ url('history') }}"><i class="fa fa-shopping-basket"></i> Derniers scans </a>
                             </li>
                         </ul>
                         </div>
