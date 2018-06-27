@@ -47,7 +47,7 @@ class UserAPIController extends Controller
       $inputs['fat'] = $data["user"]["preferences"]["nutrients"]["fat"];
       $inputs['saturedFat'] = $data["user"]["preferences"]["nutrients"]["saturated_fat"];
       $inputs['palmOil'] = $data["user"]["preferences"]["nutrients"]["palm_oil"];
-      $inputs['calories'] = $data["user"]["preferences"]["nutrients"]["calories"];
+      // $inputs['calories'] = $data["user"]["preferences"]["nutrients"]["calories"];
       $inputs['additives'] = $data["user"]["preferences"]["additives"];
 
       $inputs['updated_at'] = new \DateTime("now", new \DateTimeZone('Europe/Paris'));
@@ -56,5 +56,5 @@ class UserAPIController extends Controller
 
       return array('test' => $inputs['additives']);
     }
-    
+
 }

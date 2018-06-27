@@ -21,3 +21,6 @@ Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
 Route::get('/formpref', 'FormPrefController@index')->name('preferences');
 Route::post('/formpref', 'FormPrefController@formok')->name('preferences');
+
+Route::get('/legalmentions', 'LegalController@legalmentions');
+Route::get('/cgu', 'LegalController@cgu');

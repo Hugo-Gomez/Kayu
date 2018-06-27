@@ -51,11 +51,7 @@
                         <ul class="nav side-menu">
                         <li class="dashboard-menu"><a href="{{ route('dashboard') }}"><i class="fa fa-tachometer-alt"></i> Dashboard </a>
                             </li>
-                            <li><a><i class="fa fa-sliders-h"></i> Préférences <span class="fa fa-chevron-down"></span></a>
-                            <ul class="nav child_menu">
-                                <li><a>Roles</a></li>
-                                <li><a href="{{ url('formpref') }}">Mes préférences</a></li>
-                            </ul>
+                            <li><a href="{{ url('formpref') }}"><i class="fa fa-sliders-h"></i> Mes Préférences </a>
                             </li>
                             <li><a><i class="fa fa-shopping-basket"></i> Derniers scans </a>
                             </li>
