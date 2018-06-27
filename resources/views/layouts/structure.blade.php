@@ -54,10 +54,10 @@
                             <li><a><i class="fa fa-sliders-h"></i> Préférences <span class="fa fa-chevron-down"></span></a>
                             <ul class="nav child_menu">
                                 <li><a>Roles</a></li>
-                                <li><a href="{{ url('formpref') }}">Mes préférences</a></li>
+                                <li><a href="{{ url('formpref') }}"> Mes préférences </a></li>
                             </ul>
                             </li>
-                            <li><a><i class="fa fa-shopping-basket"></i> Derniers scans </a>
+                            <li><a href="{{ url('history') }}"><i class="fa fa-shopping-basket"></i> Derniers scans </a>
                             </li>
                         </ul>
                         </div>

@@ -18,6 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+Route::get('/history', 'ScanHistoryController@index')->name('history');
 
 Route::get('/formpref', 'FormPrefController@index')->name('preferences');
 Route::post('/formpref', 'FormPrefController@formok')->name('preferences');
