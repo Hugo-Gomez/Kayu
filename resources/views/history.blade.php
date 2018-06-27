@@ -2,4 +2,5 @@
 
 @section('content')
     This is the history section
+    {{ $json }}
 @endsection
