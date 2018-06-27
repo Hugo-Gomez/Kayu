@@ -21,11 +21,11 @@ class CreateUsersTable extends Migration
             $table->string("pwd_salt")->nullable(true);
             $table->boolean("palmOil")->default(true);
             $table->integer("caloriesMax")->nullable(true);
-            $table->string("salt")->nullable(true);
-            $table->string("sugar")->nullable(true);
-            $table->string("fat")->nullable(true);
-            $table->string("saturedFat")->nullable(true);
-            $table->string("additives")->nullable(true);
+            $table->string("salt")->default('low');
+            $table->string("sugar")->default('low');
+            $table->string("fat")->default('low');
+            $table->string("saturedFat")->default('low');
+            $table->string("additives")->default('dangerous');
             $table->rememberToken();
             $table->timestamps();
         });
