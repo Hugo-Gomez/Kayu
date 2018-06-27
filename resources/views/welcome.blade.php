@@ -2,10 +2,10 @@
 <html>
 <head>
 <title>Bienvenue sur Kayu</title>
-    <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.min.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/custom.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/fontawesome-all.css') }}" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 </head>
 <style>
     body {
@@ -18,6 +18,11 @@
         align-items: center;
         align-content: space-around;
     }
+
+    .row {
+            margin-right: 0;
+            margin-left: 0;
+        }
 
     .buttons {
         display: flex;
@@ -45,6 +50,12 @@
     .welcome {
         text-align: center;
     }
+
+    .presentation {
+         display: flex;
+         justify-content: center;
+         margin-top: 10px;
+    }
 </style>
 <body>
     <div class="welcome">
@@ -57,10 +68,12 @@
         <a href="{{ route('register') }}"><button type="button" class="vege-btn btn btn-round btn-success">Register</button></a>
     </div>
 
-    <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Qu'est-ce que Kayu ?</h5>
-          <p class="card-text">Kayu est un projet mélangeant Objet Connectés, web et mobile. Kayu vous permet grâce à un boitier et une application mobile de scanner vos produits, et vous éviter de consommer des produits aec des ingrédients ou additifs que vous voulez éviter. Grâce à ce site, vous pouvez rentrer vos préférences et paramètres de consommation, qui seront pris en compte par l'appli relié à votre compte. Grâce au boitier, vous saurez par des LED si le produit est propre à votre consommation ou pas.</p>
+    <div class="row presentation">
+        <div class="card col-sm-4">
+            <div class="card-body">
+              <h5 class="card-title">Qu'est-ce que Kayu ?</h5>
+              <p class="card-text">Kayu est un projet mélangeant Objet Connectés, web et mobile. Kayu vous permet grâce à un boitier et une application mobile de scanner vos produits, et vous éviter de consommer des produits avec des ingrédients ou additifs que vous voulez éviter. Grâce à ce site, vous pouvez rentrer vos préférences et paramètres de consommation, qui seront pris en compte par l'appli relié à votre compte. Grâce au boitier, vous saurez par des LED si le produit est propre à votre consommation ou pas.</p>
+            </div>
         </div>
     </div>
 </body>
