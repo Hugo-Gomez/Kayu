@@ -1,6 +1,12 @@
 @extends('layouts.structure')
 
 @section('content')
+<div class="page-title">
+    <div class="title_left">
+      <h1>Bonjour {{ $user->name }}</h1>
+    </div>
+  </div>
+  
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
