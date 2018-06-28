@@ -25,12 +25,26 @@ class ScanHistoryController extends Controller
     public function index()
     {
         $history = DB::table('history')->get(['barcode']);
-        //dd($history);
+        $additives = DB::table('additives')->get();
+
+        $i = 1;
+        $o = 1;
+
         foreach ($history as $h) {
             $json = json_decode(file_get_contents('https://world-fr.openfoodfacts.org/api/v0/produit/' . $h->barcode . '.json'), true);
-            dd($json);
+            $inputs[$i]["name"] = $json["product"]["product_name_fr"];
+            $inputs[$i]["barcode"] = $json["product"]["code"];
+            $inputs[$i]["nutriments"] = $json["product"]["nutriments"];
+            $inputs[$i]["additives_tags"] = $json["product"]["additives_tags"];
+            $inputs[$i]["ingredients_tags"] = $json["product"]["ingredients_tags"];
+            $inputs[$i]["nutrient_levels"] = $json["product"]["nutrient_levels"];
+
+            $i++;
         }
-        
-        return view('history', compact('json'));
+
+        $o--;
+        $i--;
+
+        return view('history', compact('inputs','i','additives'));
     }
 }
