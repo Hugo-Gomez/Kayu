@@ -5,7 +5,7 @@
     </p>
     <div class="page-title">
       <div class="title_left">
-        <h1>L'historique de vos 10 derniers produits scannés</h1>
+        <h1>Historique de vos 10 derniers produits scannés</h1>
       </div>
     </div>
 
@@ -54,8 +54,8 @@
                       @endphp
                     </p>
                     <p>
-                      Nutriements :
-                      @if ( $inputs[$i]['nutrient_levels']["sugars"] )
+                      Nutriments :
+                      @if ( $inputs[$i]['nutrient_levels'] )
                         <ul>
                           <li>Sucre : {{ $inputs[$i]['nutrient_levels']["sugars"] }}</li>
                           <li>Matières grasses : {{ $inputs[$i]['nutrient_levels']["fat"] }}</li>
@@ -63,7 +63,7 @@
                           <li>Sels : {{ $inputs[$i]['nutrient_levels']["salt"] }}</li>
                         </ul>
                       @else
-                        Désolé les informations de ce produit ne sont pas complètes
+                        <h3>Désolé, les informations de ce produit ne sont pas complètes</h3>
                       @endif
 
                   </div>
