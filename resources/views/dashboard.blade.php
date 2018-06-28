@@ -44,7 +44,7 @@
                   <p>Vous avez actuellement scanné {{ $i }} produits :</p>
                   @while ($i > 0)
                     <ul>
-                      <li>{{ $inputs[$i]["name"] }}</li>
+                      <li>{{ $inputs[$i]["name"]->name }}</li>
                        <li>{{ $inputs[$i]["status"]->status }}</li>
                     </ul>
                     @php

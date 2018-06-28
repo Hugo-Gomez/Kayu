@@ -31,10 +31,10 @@ class DashboardController extends Controller
         $i = 1;
 
         foreach ($history as $h) {
-            $json = json_decode(file_get_contents('https://world-fr.openfoodfacts.org/api/v0/produit/' . $h->barcode . '.json'), true);
-            $inputs[$i]["name"] = $json["product"]["product_name_fr"];
+          
+            $inputs[$i]["name"] = DB::table('history')->where('barcode','=',$h->barcode)->get(['name'])->first();
             $inputs[$i]["status"] = DB::table('history')->where('barcode','=',$h->barcode)->get(['status'])->first();
-            $inputs[$i]["image"] = $json["product"]["image_small_url"];
+            $inputs[$i]["image"] = DB::table('history')->where('barcode','=',$h->barcode)->get(['image'])->first();
 
             $i++;
           }

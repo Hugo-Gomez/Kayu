@@ -25,7 +25,10 @@ class ProductController extends Controller
       $data = Input::all();
       $date = new \DateTime("now", new \DateTimeZone('Europe/Paris'));
 
+      $json = json_decode(file_get_contents('https://world-fr.openfoodfacts.org/api/v0/produit/' . $data["barcode"] . '.json'), true);
       $inputs['user_id'] = $data["user_id"];
+      $inputs['name'] = $json["product"]["product_name_fr"];
+      $inputs['image'] = $json["product"]["image_small_url"];
       $inputs['barcode'] = $data["barcode"];
       $inputs['status'] = $data["status"];
       $inputs['updated_at'] = $date;
