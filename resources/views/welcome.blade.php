@@ -46,7 +46,7 @@
         right: 0;
         z-index: -1;
     }
-    
+
     .welcome {
         text-align: center;
     }
@@ -62,17 +62,30 @@
         <h1>KAYU</h1>
         <p>L'application attentive à votre consommation</p>
     </div>
-    
-    <div class="buttons">
-        <a href="{{ route('login') }}"><button type="button" class="vege-btn btn btn-round btn-primary">Log In</button></a>
-        <a href="{{ route('register') }}"><button type="button" class="vege-btn btn btn-round btn-success">Register</button></a>
+
+
+      @if (Auth::guest())
+        <div class="buttons">
+          <a href="{{ route('login') }}"><button type="button" class="vege-btn btn btn-round btn-primary">Se connecter</button></a>
+          <a href="{{ route('register') }}"><button type="button" class="vege-btn btn btn-round btn-success">S'inscrire</button></a>
+        </div>
+      @else
+        <div class="buttons myaccount">
+          <a href="{{ route('dashboard') }}"><button type="button" class="vege-btn btn btn-round btn-primary">Mon compte</button></a>
+        </div>
+      @endif
+
     </div>
 
     <div class="row presentation">
         <div class="card col-sm-4">
             <div class="card-body">
               <h5 class="card-title">Qu'est-ce que Kayu ?</h5>
-              <p class="card-text">Kayu est un projet mélangeant Objet Connectés, web et mobile. Kayu vous permet grâce à un boitier et une application mobile de scanner vos produits, et vous éviter de consommer des produits avec des ingrédients ou additifs que vous voulez éviter. Grâce à ce site, vous pouvez rentrer vos préférences et paramètres de consommation, qui seront pris en compte par l'appli relié à votre compte. Grâce au boitier, vous saurez par des LED si le produit est propre à votre consommation ou pas.</p>
+              <p class="card-text">Kayu est un projet mélangeant Objet Connectés, web et mobile.
+                Il vous permet grâce à un boitier et une application mobile de scanner vos produits,
+                et éviter de consommer des produits avec des ingrédients ou additifs que vous voulez éviter.
+                Grâce à ce site, vous pouvez rentrer vos préférences et paramètres de consommation, qui seront pris en compte par l'appli relié à votre compte.
+                Grâce au boitier, vous saurez par des LED si le produit est propre à votre consommation ou pas.</p>
             </div>
         </div>
     </div>
