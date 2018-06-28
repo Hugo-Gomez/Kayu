@@ -18,7 +18,7 @@ class History extends Migration
           $table->integer('user_id')->unsigned();
           $table->foreign('user_id')->references('id')->on('users');
           $table->string('barcode', 50);
-          $table->string('name', 50);
+          $table->string('name', 100);
           $table->string('image', 100);
           $table->string('status', 50);
           $table->timestamps();

@@ -27,8 +27,6 @@ class ScanHistoryController extends Controller
     {
         $user = Auth::user();
         $history = DB::table('history')->where('user_id','=',$user->id)->orderBy('created_at', 'ASC')->get();
-        $additives = DB::table('additives')->get();
-        $user = Auth::user();
 
         $i = 1;
 
@@ -37,13 +35,15 @@ class ScanHistoryController extends Controller
           $inputs[$i]["barcode"] = DB::table('history')->where('barcode','=',$h->barcode)->get(['barcode'])->first();
           $inputs[$i]["status"] = DB::table('history')->where('barcode','=',$h->barcode)->get(['status'])->first();
           $inputs[$i]["image"] = DB::table('history')->where('barcode','=',$h->barcode)->get(['image'])->first();
+          $inputs[$i]["created_at"] = DB::table('history')->where('barcode','=',$h->barcode)->get(['created_at'])->first();
 
           $i++;
         }
 
         $i--;
 
-        return view('history', compact('inputs','i','additives'));
+        return view('history', compact('inputs','i','user'));
+
     }
 
     public function showProduct($i) {
@@ -52,33 +52,40 @@ class ScanHistoryController extends Controller
       $history = DB::table('history')->where('user_id','=',$user->id)->orderBy('created_at', 'ASC')->get(['barcode']);
       $additives = DB::table('additives')->get();
       $user = Auth::user();
+      //dd($history[$i]->barcode);
 
-      $json = json_decode(file_get_contents('https://world-fr.openfoodfacts.org/api/v0/produit/' . $history[$i]->barcode . '.json'), true);
-
-      $inputs["name"] = $json["product"]["product_name_fr"];
-      $inputs["barcode"] = $json["product"]["code"];
-      $inputs["energy_value"] = $json["product"]["nutriments"]["energy_value"];
-      $inputs["energy_unit"] = $json["product"]["nutriments"]["energy_unit"];
-      $inputs["additives_tags"] = $json["product"]["additives_tags"];
-      $inputs["ingredients_tags"] = $json["product"]["ingredients_tags"];
-      if ($json["product"]["nutrient_levels"] != null)
+      if ($i>=0 && $i<10)
       {
-        $inputs["nutrient_levels"] = $json["product"]["nutrient_levels"];
-        $inputs["sugar"]=self::nutrimentLevelSugar($user, $json);
-        $inputs["salt"]=self::nutrimentLevelSalt($user, $json);
-        $inputs["fat"]=self::nutrimentLevelFat($user, $json);
-        $inputs["saturedFat"]=self::nutrimentLevelSaturedFat($user, $json);
+        $json = json_decode(file_get_contents('https://world-fr.openfoodfacts.org/api/v0/produit/' . $history[$i]->barcode . '.json'), true);
+
+        $inputs["name"] = $json["product"]["product_name_fr"];
+        $inputs["barcode"] = $json["product"]["code"];
+        $inputs["energy_value"] = $json["product"]["nutriments"]["energy_value"];
+        $inputs["energy_unit"] = $json["product"]["nutriments"]["energy_unit"];
+        $inputs["additives_tags"] = $json["product"]["additives_tags"];
+        $inputs["ingredients_tags"] = $json["product"]["ingredients_tags"];
+        if ($json["product"]["nutrient_levels"] != null)
+        {
+          $inputs["nutrient_levels"] = $json["product"]["nutrient_levels"];
+          $inputs["sugar"]=self::nutrimentLevelSugar($user, $json);
+          $inputs["salt"]=self::nutrimentLevelSalt($user, $json);
+          $inputs["fat"]=self::nutrimentLevelFat($user, $json);
+          $inputs["saturedFat"]=self::nutrimentLevelSaturedFat($user, $json);
+        }
+        else $inputs["nutrient_levels"] = 0;
+
+        $inputs["image"] = $json["product"]["image_small_url"];
+
+        if ($json["product"]["image_ingredients_url"] != null)
+        {
+            $inputs["ingredients_image"] = $json["product"]["image_ingredients_url"];
+        }
+
+        return view('product', compact('inputs','additives'));
       }
-      else $inputs["nutrient_levels"] = 0;
-
-      $inputs["image"] = $json["product"]["image_small_url"];
-
-      if ($json["product"]["image_ingredients_url"] != null)
-      {
-          $inputs["ingredients_image"] = $json["product"]["image_ingredients_url"];
+      else {
+        return view('/welcome');
       }
-
-      return view('product', compact('inputs','additives'));
 
     }
 

@@ -30,7 +30,7 @@ class ProductController extends Controller
       $inputs['name'] = $json["product"]["product_name_fr"];
       $inputs['image'] = $json["product"]["image_small_url"];
       $inputs['barcode'] = $data["barcode"];
-      $inputs['status'] = $data["status"];
+      $inputs['status'] = $data["status"]; 
       $inputs['updated_at'] = $date;
       $inputs['created_at'] = $date;
 
