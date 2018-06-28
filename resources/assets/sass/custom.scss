@@ -344,7 +344,9 @@ body {
   display: block;
   margin-left: 230px;
 }
-.main_container {}
+.main_container {
+  position: relative;
+}
 .no-padding {
   padding: 0 !important;
 }
