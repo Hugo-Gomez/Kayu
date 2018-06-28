@@ -37,7 +37,12 @@ class ScanHistoryController extends Controller
             $inputs[$i]["nutriments"] = $json["product"]["nutriments"];
             $inputs[$i]["additives_tags"] = $json["product"]["additives_tags"];
             $inputs[$i]["ingredients_tags"] = $json["product"]["ingredients_tags"];
-            $inputs[$i]["nutrient_levels"] = $json["product"]["nutrient_levels"];
+            if ($json["product"]["nutrient_levels"] != null)
+            {
+              $inputs[$i]["nutrient_levels"] = $json["product"]["nutrient_levels"];
+            }
+            else $inputs[$i]["nutrient_levels"] = 0;
+
             $inputs[$i]["image"] = $json["product"]["image_small_url"];
 
             $i++;

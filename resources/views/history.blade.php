@@ -55,12 +55,16 @@
                     </p>
                     <p>
                       Nutriements :
-                      <ul>
-                        <li>Sucre : {{ $inputs[$i]['nutrient_levels']["sugars"] }}</li>
-                        <li>Matières grasses : {{ $inputs[$i]['nutrient_levels']["fat"] }}</li>
-                        <li>Matières grasses saturées : {{ $inputs[$i]['nutrient_levels']["saturated-fat"] }}</li>
-                        <li>Sels : {{ $inputs[$i]['nutrient_levels']["salt"] }}</li>
-                      </ul>
+                      @if ( $inputs[$i]['nutrient_levels']["sugars"] )
+                        <ul>
+                          <li>Sucre : {{ $inputs[$i]['nutrient_levels']["sugars"] }}</li>
+                          <li>Matières grasses : {{ $inputs[$i]['nutrient_levels']["fat"] }}</li>
+                          <li>Matières grasses saturées : {{ $inputs[$i]['nutrient_levels']["saturated-fat"] }}</li>
+                          <li>Sels : {{ $inputs[$i]['nutrient_levels']["salt"] }}</li>
+                        </ul>
+                      @else
+                        Désolé les informations de ce produit ne sont pas complètes
+                      @endif
 
                   </div>
               </div>
