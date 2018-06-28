@@ -34,11 +34,11 @@
                     <!-- menu profile quick info -->
                     <div class="profile clearfix">
                         <div class="profile_pic">
-                        <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+                        <img src="images/yuka.jpg" alt="..." class="img-circle profile_img">
                         </div>
                         <div class="profile_info">
-                        <span>Welcome,</span>
-                        <h2>{{ Auth::user()->name }}</h2>
+                        <span>Bienvenue,</span>
+                        <h2>{{ Auth::user()->prenom }} {{ Auth::user()->name }}</h2>
                         </div>
                     </div>
                     <!-- /menu profile quick info -->
@@ -74,14 +74,14 @@
                         <ul class="nav navbar-nav navbar-right">
                         <li class="">
                             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                            <img src="images/img.jpg" alt="">{{ Auth::user()->name }}
+                            <img src="images/yuka.jpg" alt="">{{ Auth::user()->prenom }}
                             <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
-                            <li><a href="javascript:;"> Profile</a></li>
+                            <li><a href="{{ url('formpref') }}"> Mes préférences</a></li>
                             <li><a href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();"><i class="fa fa-sign-out-alt pull-right"></i> Log Out</a>
+                                                     document.getElementById('logout-form').submit();"><i class="fa fa-sign-out-alt pull-right"></i> Se déconnecter</a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
                                 </form>

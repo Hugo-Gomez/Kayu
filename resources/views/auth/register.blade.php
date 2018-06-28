@@ -29,6 +29,20 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="prenom" class="col-md-4 col-form-label text-md-right">{{ __('Prénom') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="prenom" type="text" class="form-control{{ $errors->has('prenom') ? ' is-invalid' : '' }}" name="prenom" value="{{ old('prenom') }}" required>
+
+                                @if ($errors->has('prenom'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('prenom') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Adresse email') }}</label>
 
                             <div class="col-md-6">
@@ -69,6 +83,12 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __("S'inscrire") }}
                                 </button>
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-0">
+                            <div class="col-md-8 offset-md-4">
+                                <a class="btn btn-link" href="{{ route('register') }}"> Créez un compte</a></p>
                             </div>
                         </div>
                     </form>

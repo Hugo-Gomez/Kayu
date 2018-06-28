@@ -4,6 +4,10 @@ body {
   margin: 0;
 }
 
+.myaccount {
+  width: auto !important;
+}
+
 .left_col {
   background: #2A3F54;
 }
@@ -4987,4 +4991,3 @@ ul.notifications {
 }
 
 /** /Dropzone.js **/
-

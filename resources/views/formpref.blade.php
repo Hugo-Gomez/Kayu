@@ -3,7 +3,7 @@
 @section('content')
   <div class="page-title">
     <div class="title_left">
-      <h1>Bonjour {{ $user->name }}</h1>
+      <h1>Bonjour {{ $user->prenom }} {{ $user->name }}</h1>
     </div>
   </div>
 
