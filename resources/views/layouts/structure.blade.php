@@ -79,9 +79,10 @@
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
                             <li><a href="{{ url('formpref') }}"> Mes préférences</a></li>
+                            <li><a href="{{ url('downloadJSONFile') }}"><i class="fa fa-download"></i> RGPD</a></li>
                             <li><a href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();"><i class="fa fa-sign-out-alt pull-right"></i> Se déconnecter</a>
+                                                     document.getElementById('logout-form').submit();"><i class="fa fa-sign-out-alt"></i> Se déconnecter</a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
                                 </form>
