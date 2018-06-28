@@ -67,9 +67,9 @@
                 <div class="x_content dashboard-body">
                   @while ($i > 0)
                     <div class="dashboard-content">
-                      <img class="thumbnail img-product" src="{{ $inputs[$i]["image"] }}" alt="Aperçu du produit">
+                      <img class="thumbnail img-product" src="{{ $inputs[$i]["image"]->image }}" alt="Aperçu du produit">
                       <ul style="list-style: none;">
-                        <li style="font-weight:bold;">{{ $inputs[$i]["name"] }}</li>
+                        <li style="font-weight:bold;">{{ $inputs[$i]["name"]->name }}</li>
                         @if ($inputs[$i]["status"]->status == "yes")
                           <li style="margin-left: 20px;">↳ <span style="color:#28a745;">• Propre à votre consommation lors du scan le</span></li>
                         @else
