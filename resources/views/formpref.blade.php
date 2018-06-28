@@ -1,17 +1,11 @@
 @extends('layouts.structure')
 
 @section('content')
-  <div class="page-title">
-    <div class="title_left">
-      <h1>Bonjour {{ $user->prenom }} {{ $user->name }}</h1>
-    </div>
-  </div>
-
   <div class="row justify-content-center">
       <div class="col-md-12 col-sm-12 col-xs-12">
           <div class="x_panel">
               <div class="x_title">
-                <h3>Formulaire de vos préférences</h3>
+                <h3>Vos préférences</h3>
               </div>
 
               <div class="x_content">

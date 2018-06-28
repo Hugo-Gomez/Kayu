@@ -34,6 +34,7 @@ class ScanHistoryController extends Controller
 
         foreach ($history as $h) {
             $json = json_decode(file_get_contents('https://world-fr.openfoodfacts.org/api/v0/produit/' . $h->barcode . '.json'), true);
+            //dd($json);
             $inputs[$i]["name"] = $json["product"]["product_name_fr"];
             $inputs[$i]["barcode"] = $json["product"]["code"];
             $inputs[$i]["energy_value"] = $json["product"]["nutriments"]["energy_value"];
@@ -51,6 +52,11 @@ class ScanHistoryController extends Controller
             else $inputs[$i]["nutrient_levels"] = 0;
 
             $inputs[$i]["image"] = $json["product"]["image_small_url"];
+
+            if ($json["product"]["image_ingredients_url"] != null)
+            {
+                $inputs[$i]["ingredients_image"] = $json["product"]["image_ingredients_url"];
+            }
 
             $i++;
         }
