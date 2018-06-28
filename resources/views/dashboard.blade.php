@@ -1,6 +1,29 @@
 @extends('layouts.structure')
 
 @section('content')
+  <style>
+    .dashboard-body {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .dashboard-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex: 1 0 32.7%;
+      border: 2px solid #e6e9ed;
+      border-radius: 10px;
+      padding: 10px 20px;
+      margin: 0 5px 10px 5px;
+      height: 100%;
+      width: 32.7%;
+    }
+
+    .thumbnail {
+      margin-bottom: 0;
+    }
+  </style>
+
   <div class="page-title">
     <div class="title_left">
       <h1>Bonjour {{ $user->prenom }}</h1>
@@ -40,16 +63,23 @@
                   <h3>Votre dashboard</h3>
                 </div>
 
-                <div class="x_content">
-                  <p>Vous avez actuellement scanné {{ $i }} produits :</p>
+                <p>Vous avez actuellement scanné {{ $i }} produits :</p>
+                <div class="x_content dashboard-body">
                   @while ($i > 0)
-                    <ul>
-                      <li>{{ $inputs[$i]["name"] }}</li>
-                       <li>{{ $inputs[$i]["status"]->status }}</li>
-                    </ul>
-                    @php
-                       $i--;
-                    @endphp
+                    <div class="dashboard-content">
+                      <img class="thumbnail img-product" src="{{ $inputs[$i]["image"] }}" alt="Aperçu du produit">
+                      <ul style="list-style: none;">
+                        <li style="font-weight:bold;">{{ $inputs[$i]["name"] }}</li>
+                        @if ($inputs[$i]["status"]->status == "yes")
+                          <li style="margin-left: 20px;">↳ <span style="color:#28a745;">• Propre à votre consommation lors du scan le</span></li>
+                        @else
+                          <li style="margin-left: 20px;">↳ <span style="color:#dc3545;">• Impropre à votre consommation lors du scan le</span></li>
+                        @endif
+                      </ul>
+                      @php
+                        $i--;
+                      @endphp
+                    </div>
                   @endwhile
                 </div>
 
