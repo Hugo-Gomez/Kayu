@@ -71,9 +71,9 @@
                       <ul style="list-style: none;">
                         <li style="font-weight:bold;">{{ $inputs[$i]["name"]->name }}</li>
                         @if ($inputs[$i]["status"]->status == "yes")
-                          <li style="margin-left: 20px;">↳ <span style="color:#28a745;">• Propre à votre consommation lors du scan le</span></li>
+                      <li style="margin-left: 20px;">↳ <span style="color:#28a745;">• Propre à votre consommation lors du scan le {{ Carbon\Carbon::parse($inputs[$i]["created_at"]->created_at)->format('d/m/Y') }}</span></li>
                         @else
-                          <li style="margin-left: 20px;">↳ <span style="color:#dc3545;">• Impropre à votre consommation lors du scan le</span></li>
+                          <li style="margin-left: 20px;">↳ <span style="color:#dc3545;">• Impropre à votre consommation lors du scan le {{ Carbon\Carbon::parse($inputs[$i]["created_at"]->created_at)->format('d/m/Y') }}</span></li>
                         @endif
                       </ul>
                       @php

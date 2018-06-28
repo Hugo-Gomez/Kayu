@@ -39,6 +39,7 @@ class DashboardController extends Controller
             $inputs[$i]["name"] = DB::table('history')->where('barcode','=',$h->barcode)->get(['name'])->first();
             $inputs[$i]["status"] = DB::table('history')->where('barcode','=',$h->barcode)->get(['status'])->first();
             $inputs[$i]["image"] = DB::table('history')->where('barcode','=',$h->barcode)->get(['image'])->first();
+            $inputs[$i]["created_at"] = DB::table('history')->where('barcode','=',$h->barcode)->get(['created_at'])->first();
 
             $i++;
           }
