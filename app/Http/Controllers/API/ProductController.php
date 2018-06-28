@@ -27,6 +27,7 @@ class ProductController extends Controller
 
       $inputs['user_id'] = $data["user_id"];
       $inputs['barcode'] = $data["barcode"];
+      $inputs['status'] = $data["status"];
       $inputs['updated_at'] = $date;
       $inputs['created_at'] = $date;
 
