@@ -17,6 +17,8 @@
                     <h3>Produit {{ $i }} : {{ $inputs[$i]['name'] }}</h3>
                   </div>
                   <div class="x_content">
+                    <p><img src=" {{ $inputs[$i]['image'] }}" alt="Image du produit">
+                    </p>
                     <p>
                       Code barre : {{ $inputs[$i]['barcode'] }}
                     </p>
