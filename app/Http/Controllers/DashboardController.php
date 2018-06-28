@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use Auth;
 use DB;
 
+use File;
+
+use Response;
+
 class DashboardController extends Controller
 {
     /**
@@ -42,5 +46,14 @@ class DashboardController extends Controller
           $i--;
 
           return view('dashboard', compact('inputs','i', 'user'));
+    }
+
+    public function downloadJSONFile(){
+        $user = Auth::user();
+        $userDatas = $user->get(['name', 'prenom', 'email', 'palmOil', 'caloriesMax', 'salt', 'sugar', 'fat', 'saturedFat', 'additives', 'created_at', 'updated_at']);
+        $data = json_encode($userDatas);
+        $fileName = $userDatas[0]->name . '_' . $userDatas[0]->prenom . '_' . time() . '_datafile.json';
+        File::put(public_path('/upload/json/user/'.$fileName),$data);
+        return Response::download(public_path('/upload/json/user/'.$fileName));
     }
 }

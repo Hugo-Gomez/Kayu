@@ -71,7 +71,7 @@
         </div>
       @else
         <div class="buttons myaccount">
-          <a href="{{ route('dashboard') }}"><button type="button" class="vege-btn btn btn-round btn-primary">Mon compte</button></a>
+          <a href="{{ route('dashboard') }}"><button type="button" class="vege-btn btn btn-round btn-primary">Mon dashboard</button></a>
         </div>
       @endif
 

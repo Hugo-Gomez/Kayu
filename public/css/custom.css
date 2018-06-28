@@ -4,10 +4,6 @@ body {
   margin: 0;
 }
 
-.myaccount {
-  width: auto !important;
-}
-
 .left_col {
   background: #2A3F54;
 }
@@ -435,6 +431,10 @@ body {
 .main_container .top_nav {
   display: block;
   margin-left: 230px;
+}
+
+.main_container {
+  position: relative;
 }
 
 .no-padding {
@@ -4991,3 +4991,4 @@ ul.notifications {
 }
 
 /** /Dropzone.js **/
+
