@@ -18,61 +18,71 @@ class HistorySeeder extends Seeder
                 'user_id' => 1,
                 'barcode' => '3329770061866',
                 'status' => 'yes',
-                'created_at' => $date
+                'created_at' => $date,
+                'updated_at' => $date
             ],
             [
                 'user_id' => 1,
                 'barcode' => '5410126104103',
                 'status' => 'yes',
-                'created_at' => $date
+                'created_at' => $date,
+                'updated_at' => $date
             ],
             [
                 'user_id' => 1,
                 'barcode' => '9002490205973',
                 'status' => 'no',
-                'created_at' => $date
+                'created_at' => $date,
+                'updated_at' => $date
             ],
             [
                 'user_id' => 1,
                 'barcode' => '5410126104103',
                 'status' => 'yes',
-                'created_at' => $date
+                'created_at' => $date,
+                'updated_at' => $date
             ],
             [
                 'user_id' => 1,
                 'barcode' => '9002490205973',
                 'status' => 'no',
-                'created_at' => $date
+                'created_at' => $date,
+                'updated_at' => $date
             ],
             [
                 'user_id' => 1,
                 'barcode' => '5410126104103',
                 'status' => 'yes',
-                'created_at' => $date
+                'created_at' => $date,
+                'updated_at' => $date
             ],
             [
                 'user_id' => 1,
                 'barcode' => '9002490205973',
                 'status' => 'no',
-                'created_at' => $date
+                'created_at' => $date,
+                'updated_at' => $date
             ],
             [
                 'user_id' => 1,
                 'barcode' => '5410126104103',
                 'status' => 'yes',
-                'created_at' => $date
+                'created_at' => $date,
+                'updated_at' => $date
             ],
             [
                 'user_id' => 1,
                 'barcode' => '9002490205973',
                 'status' => 'no',
-                'created_at' => $date
+                'created_at' => $date,
+                'updated_at' => $date
             ],
             [
                 'user_id' => 1,
                 'barcode' => '5410126104103',
                 'status' => 'yes',
-                'created_at' => $date
+                'created_at' => $date,
+                'updated_at' => $date
             ]
         ];
 
