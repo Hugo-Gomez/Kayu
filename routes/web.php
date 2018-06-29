@@ -20,7 +20,7 @@ Auth::routes();
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
 Route::get('/history', 'ScanHistoryController@index')->name('history');
-Route::get('/history/{id}', 'ScanHistoryController@showProduct');
+Route::get('/product{id}', 'ProductController@index');
 
 Route::get('/formpref', 'FormPrefController@index')->name('preferences');
 Route::post('/formpref', 'FormPrefController@formok')->name('preferences');

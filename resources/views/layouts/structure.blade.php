@@ -34,7 +34,7 @@
                     <!-- menu profile quick info -->
                     <div class="profile clearfix">
                         <div class="profile_pic">
-                        <img src="images/yuka.jpg" alt="..." class="img-circle profile_img">
+                        <img src="./images/yuka.jpg" alt="..." class="img-circle profile_img">
                         </div>
                         <div class="profile_info">
                         <span>Bienvenue,</span>
@@ -49,12 +49,17 @@
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                         <div class="menu_section">
                         <ul class="nav side-menu">
-                        <li class="dashboard-menu"><a href="{{ route('dashboard') }}"><i class="fa fa-tachometer-alt"></i> Dashboard </a>
-                            </li>
-                            <li><a href="{{ url('formpref') }}"><i class="fa fa-sliders-h"></i> Mes Préférences </a>
-                            </li>
-                            <li><a href="{{ url('history') }}"><i class="fa fa-shopping-basket"></i> Derniers scans </a>
-                            </li>
+                          <li class="dashboard-menu"><a href="{{ route('dashboard') }}"><i class="fa fa-tachometer-alt"></i>  Dashboard </a>
+                          </li>
+                          <li><a href="{{ url('formpref') }}"><i class="fa fa-sliders-h"></i>  Mes Préférences </a>
+                          </li>
+                          <li><a href="{{ url('history') }}"><i class="fa fa-shopping-basket"></i>  Derniers scans </a>
+                          </li>
+                        </ul>
+
+                        <ul class="nav side-menu bottom">
+                          <li><a style="border-right: 2px solid #1ABB9C;" href="{{ url('legalmentions') }}">Mentions légales </a></li><hr>
+                          <li><a href="{{ url('cgu') }}">CGU </a></li>
                         </ul>
                         </div>
 
@@ -78,83 +83,18 @@
                             <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
-                            <li><a href="{{ url('formpref') }}"> Mes préférences</a></li>
-                            <li><a href="{{ url('downloadJSONFile') }}"><i class="fa fa-download"></i> RGPD</a></li>
+                            <li><a href="{{ url('formpref') }}"><i class="fa fa-sliders-h"></i>  Mes préférences</a></li>
+                            <li><a href="{{ url('downloadJSONFile') }}"><i class="fa fa-download"></i>  RGPD</a></li>
                             <li><a href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();"><i class="fa fa-sign-out-alt"></i> Se déconnecter</a>
+                                                     document.getElementById('logout-form').submit();"><i class="fa fa-sign-out-alt"></i>  Se déconnecter</a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
                                 </form>
                             </li>
                             </ul>
                         </li>
-
-                        {{-- <li role="presentation" class="dropdown">
-                            <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
-                            <i class="fa fa-envelope-o"></i>
-                            <span class="badge bg-green">6</span>
-                            </a>
-                            <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
-                            <li>
-                                <a>
-                                <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                                <span>
-                                    <span>John Smith</span>
-                                    <span class="time">3 mins ago</span>
-                                </span>
-                                <span class="message">
-                                    Film festivals used to be do-or-die moments for movie makers. They were where...
-                                </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a>
-                                <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                                <span>
-                                    <span>John Smith</span>
-                                    <span class="time">3 mins ago</span>
-                                </span>
-                                <span class="message">
-                                    Film festivals used to be do-or-die moments for movie makers. They were where...
-                                </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a>
-                                <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                                <span>
-                                    <span>John Smith</span>
-                                    <span class="time">3 mins ago</span>
-                                </span>
-                                <span class="message">
-                                    Film festivals used to be do-or-die moments for movie makers. They were where...
-                                </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a>
-                                <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                                <span>
-                                    <span>John Smith</span>
-                                    <span class="time">3 mins ago</span>
-                                </span>
-                                <span class="message">
-                                    Film festivals used to be do-or-die moments for movie makers. They were where...
-                                </span>
-                                </a>
-                            </li>
-                            <li>
-                                <div class="text-center">
-                                <a>
-                                    <strong>See All Alerts</strong>
-                                    <i class="fa fa-angle-right"></i>
-                                </a>
-                                </div>
-                            </li>
-                            </ul>
-                        </li> --}}
-                        </ul>
+                      </ul>
                     </nav>
                     </div>
                 </div>

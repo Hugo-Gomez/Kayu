@@ -21,21 +21,20 @@
 
     .thumbnail {
       margin-bottom: 0;
+      width: 100px;
+      height: 100px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
     }
   </style>
-
-  <div class="page-title">
-    <div class="title_left">
-      <h1>Bonjour {{ $user->prenom }}</h1>
-    </div>
-  </div>
 
   @if ($i == 0)
     <div class="row justify-content-center">
         <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="x_panel">
                 <div class="x_title">
-                  <h3>Votre dashboard</h3>
+                  <h3><i class="fa fa-shopping-basket"></i> Votre historique de scans</h3>
                 </div>
 
                 <div class="x_content">
@@ -60,20 +59,24 @@
         <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="x_panel">
                 <div class="x_title">
-                  <h3>Votre dashboard</h3>
+                  <h3><i class="fa fa-shopping-basket"></i> Votre historique de scans</h3>
                 </div>
 
                 <p>Vous avez actuellement scanné {{ $i }} produits :</p>
                 <div class="x_content dashboard-body">
                   @while ($i > 0)
                     <div class="dashboard-content">
-                      <img class="thumbnail img-product" src="{{ $inputs[$i]["image"]->image }}" alt="Aperçu du produit">
+                      <a href="{{ url('product'.$i) }}">
+                        <div class="thumbnail img-product" style="background-image:url({{ $inputs[$i]["image"]->image }})"></div>
+                      </a>
                       <ul style="list-style: none;">
-                        <li style="font-weight:bold;"><a href="{{ url('history/'.$i) }}">{{ $inputs[$i]["name"]->name }}</a></li>
+                        <li style="font-size: 20px; font-weight:bold;"><a class="linkproduct" href="{{ url('product'.$i) }}">{{ $inputs[$i]["name"]->name }}</a></li>
                         @if ($inputs[$i]["status"]->status == "yes")
-                      <li style="margin-left: 20px;">↳ <span style="color:#28a745;">• Propre à votre consommation lors du scan le {{ Carbon\Carbon::parse($inputs[$i]["created_at"]->created_at)->format('d/m/Y') }}</span></li>
-                        @else
+                          <li style="margin-left: 20px;">↳ <span style="color:#28a745;">• Propre à votre consommation lors du scan le {{ Carbon\Carbon::parse($inputs[$i]["created_at"]->created_at)->format('d/m/Y') }}</span></li>
+                        @elseif ($inputs[$i]["status"]->status == "no")
                           <li style="margin-left: 20px;">↳ <span style="color:#dc3545;">• Impropre à votre consommation lors du scan le {{ Carbon\Carbon::parse($inputs[$i]["created_at"]->created_at)->format('d/m/Y') }}</span></li>
+                        @else
+                          <li style="margin-left: 20px;">↳ <span style="color:#FFA500;">• Ce produit est incomplet, nous ne pouvons le comparer à vos critères de sélections. Scan le {{ Carbon\Carbon::parse($inputs[$i]["created_at"]->created_at)->format('d/m/Y') }}</span></li>
                         @endif
                       </ul>
                       @php
@@ -87,4 +90,5 @@
         </div>
     </div>
   @endif
+
 @endsection

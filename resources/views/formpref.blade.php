@@ -5,7 +5,7 @@
       <div class="col-md-12 col-sm-12 col-xs-12">
           <div class="x_panel">
               <div class="x_title">
-                <h3>Vos préférences</h3>
+                <h3><i class="fa fa-sliders-h"></i> Mes préférences</h3>
               </div>
 
               <div class="x_content">
@@ -83,7 +83,9 @@
                     </div>
 
                     <div class="col-md-3 col-sm-3 col-xs-12"></div>
-                    {{ Form::submit('Mise à jour des préférences', array('class' => 'btn btn-success')) }}
+                    <div class="col-md-5 col-sm-7 col-xs-12">
+                      {{ Form::submit('Mise à jour de mes préférences', array('class' => 'btn btn-success')) }}
+                    </div>
 
                 {!! Form::close() !!}
 

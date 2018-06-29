@@ -26,17 +26,20 @@
       justify-content: space-around;
       width: 100%;
     }
+
+    .myhr {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      border: 0;
+      border-top: 2px solid #e6e9ed;
+      width: 100%;
+    }
   </style>
-    <div class="page-title">
-      <div class="title_left">
-      <h1>Les détails d'un produit</h1>
-      </div>
-    </div>
     <div class="row justify-content-center">
         <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="x_panel">
                 <div class="x_title">
-                  <h3>Produit : {{ $inputs['name'] }}</h3>
+                  <h3><i class="fas fa-utensils"></i> Produit : {{ $inputs['name'] }}</h3>
                 </div>
                 <div class="x_content product-content">
                   <div class="product-thumbnail">
@@ -101,24 +104,68 @@
                         @endif
                     </div>
 
-                    <div class="vertical-separator"></div>
 
-                    <div class="product-nutrients">
-                        <p class="bold">Nutriments</p>
-                        @if ( $inputs['nutrient_levels'] )
-                          <ul>
-                            <li>Niveau de sucre : {{ $inputs['nutrient_levels']["sugars"] }}</li>
-                            <li>Niveau de matières grasses : {{ $inputs['nutrient_levels']["fat"] }}</li>
-                            <li>Niveau de matières grasses saturées : {{ $inputs['nutrient_levels']["saturated-fat"] }}</li>
-                            <li>Niveau de sels : {{ $inputs['nutrient_levels']["salt"] }}</li>
-                          </ul>
-                        @else
-                        <p>Aucun nutriments n'a été spécifié pour ce produit</p>
-                        @endif
-                    </div>
+
+                  </div>
+                </div>
+
+                <div class="x_content product-content"><hr class="myhr"></div>
+                <div class="x_content product-content">
+
+                  <div class="product-nutrients">
+                      <p class="bold">Nutriments</p>
+                      @if ( $inputs['nutrient_levels'] )
+                        <ul>
+                          <li>Niveau de sucre<ul><li style="color:{{ $inputs["sugar"]["color"] }};">{{ $inputs["sugar"]["text"] }}</li></ul></li>
+                          <li>Niveau de matières grasses<ul><li style="color:{{ $inputs["fat"]["color"] }};">{{ $inputs["fat"]["text"] }}</li></ul></li>
+                          <li>Niveau de matières grasses saturées<ul><li style="color:{{ $inputs["saturedFat"]["color"] }};">{{ $inputs["saturedFat"]["text"] }}</li></ul></li>
+                          <li>Niveau de sels<ul><li style="color:{{ $inputs["salt"]["color"] }};">{{ $inputs["salt"]["text"] }}</li></ul></li>
+                        </ul>
+                      @else
+                      <p>Aucun nutriments n'a été spécifié pour ce produit</p>
+                      @endif
                   </div>
 
-                </div>
+                  <div class="vertical-separator"></div>
+
+                  <div class="product-nutrients">
+                      <p class="bold">Calories</p>
+                      <ul>
+
+                          @if ( $inputs['energy_value'] )
+                            <li>{{ $inputs["energy_value"] }} {{ $inputs["energy_unit"] }}</li>
+                            <li style="color:{{ $inputs["energy_value_color"] }};">{{ $inputs["energy_value_text"] }}</li>
+                          @else
+                            <li>Aucune information n'a été trouvée</li>
+                          @endif
+                        </li>
+                      </ul>
+
+                      <p class="bold">Huile de palme</p>
+                      <ul>
+                          @if ($user->palmOil == 0)
+                            @if ( $inputs['PalmOil'] != null && $user->palmOil == 1)
+                              <li>Présence</li>
+                              <li style="color:red">Cela ne correspond pas à vos préférences</li>
+                            @elseif ($inputs['MaybePalmOil'] != null)
+                              <li>Potentielle présence</li>
+                              <li style="color:red">Cela ne correspond pas vraiment à vos préférences</li>
+                            @else
+                              <li>Absence</li>
+                            @endif
+                          @else
+                            @if ( $inputs['PalmOil'] != null && $user->palmOil == 1)
+                              <li>Présence</li>
+                            @elseif ($inputs['MaybePalmOil'] != null)
+                              <li>Potentielle présence</li>
+                            @else
+                              <li>Absence</li>
+                            @endif
+                          @endif
+                      </ul>
+                  </div>
+
+              </div>
             </div>
         </div>
     </div>
