@@ -13,3 +13,17 @@
 .myaccount {
   width: auto !important;
 }
+
+.bottom {
+    bottom: 0px;
+    position: absolute;
+    display: inline-flex;
+  }
+  
+  .bottom > li.current-page, .bottom > li.active {
+    border-right: 0px !important;
+  }
+  
+  .linkproduct:hover, .linkproduct:focus {
+    color: #1ABB9C;
+  }

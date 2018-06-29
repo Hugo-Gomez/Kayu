@@ -134,7 +134,9 @@
 
                           @if ( $inputs['energy_value'] )
                             <li>{{ $inputs["energy_value"] }} {{ $inputs["energy_unit"] }}</li>
-                            <li style="color:{{ $inputs["energy_value_color"] }};">{{ $inputs["energy_value_text"] }}</li>
+                            @if ($user->caloriesMax != 0 || $user->caloriesMax != null)
+                              <li style="color:{{ $inputs["energy_value_color"] }};">{{ $inputs["energy_value_text"] }}</li>
+                            @endif
                           @else
                             <li>Aucune information n'a été trouvée</li>
                           @endif

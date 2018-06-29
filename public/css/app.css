@@ -11,13 +11,18 @@
 .bottom {
   bottom: 0px;
   position: absolute;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
 }
 
-.bottom > li.current-page, .bottom > li.active {
+.bottom > li.current-page,
+.bottom > li.active {
   border-right: 0px !important;
 }
 
-.linkproduct:hover, .linkproduct:focus {
+.linkproduct:hover,
+.linkproduct:focus {
   color: #1ABB9C;
 }
+

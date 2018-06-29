@@ -38,7 +38,7 @@
               </div>
 
               <div class="x_content">
-                <p>Vous avez actuellement scanné {{ $i }} produit(s).</p>
+                <p>Vous avez scanné au total {{ $i }} produit(s).</p>
                 <p>Kayu est un projet mélangeant Objet Connectés, web et mobile.
                   Il vous permet grâce à un boitier et une application mobile de scanner vos produits,
                   et éviter de consommer des produits avec des ingrédients ou additifs que vous voulez éviter.

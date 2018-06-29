@@ -21,9 +21,9 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     </head>
         <body class="nav-md">
-            <div class="container body" style="width:100%;padding:0;">
+            <div class="container body" style="width:100%;padding:0;min-height:100vh;">
                 <div class="main_container">
-                <div class="col-md-3 left_col">
+                <div class="col-md-3 left_col" style="position:fixed;">
                     <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0;">
                         <span class="site_title">Kayu</span>
@@ -79,7 +79,7 @@
                         <ul class="nav navbar-nav navbar-right">
                         <li class="">
                             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                            <img src="images/yuka.jpg" alt="">{{ Auth::user()->prenom }}
+                            <img src="{{ URL::asset('images/yuka.jpg') }}" alt="">{{ Auth::user()->prenom }}
                             <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
