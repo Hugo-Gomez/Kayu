@@ -57,7 +57,7 @@
                           </li>
                         </ul>
 
-                        <ul class="nav side-menu bottom">
+                        <ul class="nav side-menu bottom" style="display: flex;flex-wrap: wrap;">
                           <li><a style="border-right: 2px solid #1ABB9C;" href="{{ url('legalmentions') }}">Mentions légales </a></li><hr>
                           <li><a href="{{ url('cgu') }}">CGU </a></li>
                         </ul>

@@ -16,7 +16,6 @@
       padding: 10px 20px;
       margin: 0 5px 10px 5px;
       height: 100%;
-      width: 32.7%;
     }
 
     .thumbnail {
@@ -62,9 +61,9 @@
                   <h3><i class="fa fa-shopping-basket"></i> Votre historique de scans</h3>
                 </div>
 
-                <p>Vous avez actuellement scanné {{ $i }} produits :</p>
+                <p>Vous avez actuellement scanné {{ $i + 1 }} produits</p>
                 <div class="x_content dashboard-body">
-                  @while ($i > 0)
+                  @while ($i >= 0)
                     <div class="dashboard-content">
                       <a href="{{ url('product'.$i) }}">
                         <div class="thumbnail img-product" style="background-image:url({{ $inputs[$i]["image"]->image }})"></div>

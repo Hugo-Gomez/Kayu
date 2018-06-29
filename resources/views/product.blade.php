@@ -84,15 +84,16 @@
                                 if (DB::table('additives')->where('id', '=', $a)->get()->first())
                                 {
                                   $b = DB::table('additives')->where('id', '=', $a)->get()->first();
-                                } else {}
-                                if ($b->toxicity == "toxic" || $b->toxicity == "super-toxic") {
-                                  echo '<li style="color: red;">' . $b->id . '</li>';
-                                }
-                                elseif ($b->toxicity == "no-abuse" || $b->toxicity == "doubt") {
-                                  echo '<li style="color: orange;">' . $b->id . '</li>';
-                                }
-                                else {
-                                  echo '<li style="color: green;">' . $b->id . '</li>';
+                                  
+                                  if ($b->toxicity == "toxic" || $b->toxicity == "super-toxic") {
+                                    echo '<li style="color: red;">' . $b->id . '</li>';
+                                  }
+                                  elseif ($b->toxicity == "no-abuse" || $b->toxicity == "doubt") {
+                                    echo '<li style="color: orange;">' . $b->id . '</li>';
+                                  }
+                                  else {
+                                    echo '<li style="color: green;">' . $b->id . '</li>';
+                                  }
                                 }
                                 echo '<li>' . $b->name . '</li>';
                                 echo '<li>' . $b->label . '</li>';

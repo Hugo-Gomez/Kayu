@@ -78,7 +78,7 @@
     </div>
 
     <div class="row presentation">
-        <div class="card col-sm-4">
+        <div class="card col-xs-10 col-sm-4">
             <div class="card-body">
               <h5 class="card-title">Qu'est-ce que Kayu ?</h5>
               <p class="card-text">Kayu est un projet mélangeant Objet Connectés, web et mobile.

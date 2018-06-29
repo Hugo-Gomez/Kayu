@@ -22,7 +22,7 @@
                   e-mail : <a href="mailto:contact@kayu.fr">contact@kayu.fr</a>
                 </p>
                 <p>
-                  Le site est hébergé en local.
+                  Le site est hébergé sur <a href="https://www.fastcomet.com/" target="_blank">FastComet</a>.
                 </p>
                 <p>
                   L'accès ou l'utilisation du site ou de ses services valent acceptation sans réserve des

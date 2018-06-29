@@ -26,3 +26,9 @@
   color: #1ABB9C;
 }
 
+@media (min-width: 768px) {
+  .dashboard-content {
+    max-width: 32.7%;
+  }
+}
+
