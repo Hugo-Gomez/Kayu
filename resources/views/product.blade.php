@@ -84,7 +84,7 @@
                                 if (DB::table('additives')->where('id', '=', $a)->get()->first())
                                 {
                                   $b = DB::table('additives')->where('id', '=', $a)->get()->first();
-                                  
+
                                   if ($b->toxicity == "toxic" || $b->toxicity == "super-toxic") {
                                     echo '<li style="color: red;">' . $b->id . '</li>';
                                   }
@@ -94,9 +94,10 @@
                                   else {
                                     echo '<li style="color: green;">' . $b->id . '</li>';
                                   }
+                                  echo '<li>' . $b->name . '</li>';
+                                  echo '<li>' . $b->label . '</li>';
                                 }
-                                echo '<li>' . $b->name . '</li>';
-                                echo '<li>' . $b->label . '</li>';
+
                               echo '</ul>';
                             }
                           @endphp
