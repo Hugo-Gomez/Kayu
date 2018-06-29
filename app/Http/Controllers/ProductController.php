@@ -21,7 +21,7 @@ class ProductController extends Controller
     public function index($i) {
 
       $user = Auth::user();
-      $history = DB::table('history')->where('user_id','=',$user->id)->orderBy('created_at', 'ASC')->get(['barcode']);
+      $history = DB::table('history')->where('user_id','=',$user->id)->get(['barcode']);
       $additives = DB::table('additives')->get();
       $user = Auth::user();
 
