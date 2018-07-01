@@ -27,7 +27,7 @@
     .buttons {
         display: flex;
         justify-content: space-between;
-        width: 15vw;
+        width: 20vw;
     }
 
     .buttons .vege-btn {

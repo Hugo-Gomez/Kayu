@@ -27,4 +27,5 @@ Route::post('/formpref', 'FormPrefController@formok')->name('preferences');
 
 Route::get('/legalmentions', 'LegalController@legalmentions');
 Route::get('/cgu', 'LegalController@cgu');
+
 Route::get('downloadJSONFile', array('as'=> 'downloadJSONFile', 'uses' => 'DashboardController@downloadJSONFile'));
