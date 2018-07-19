@@ -35,7 +35,7 @@ class DashboardController extends Controller
         $i = 1;
 
         foreach ($history as $h) {
-          
+
             $inputs[$i]["name"] = DB::table('history')->where('barcode','=',$h->barcode)->get(['name'])->first();
             $inputs[$i]["status"] = DB::table('history')->where('barcode','=',$h->barcode)->get(['status'])->first();
             $inputs[$i]["image"] = DB::table('history')->where('barcode','=',$h->barcode)->get(['image'])->first();
@@ -49,6 +49,9 @@ class DashboardController extends Controller
           return view('dashboard', compact('inputs','i', 'user'));
     }
 
+    /**
+    *RGPD : Dowload JSON File
+    */
     public function downloadJSONFile(){
         $user = Auth::user();
         $userDatas = $user->get(['name', 'prenom', 'email', 'palmOil', 'caloriesMax', 'salt', 'sugar', 'fat', 'saturedFat', 'additives', 'created_at', 'updated_at']);

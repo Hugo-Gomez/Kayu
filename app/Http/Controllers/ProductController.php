@@ -18,6 +18,7 @@ class ProductController extends Controller
         $this->middleware('auth');
     }
 
+    /** Information about one product in the history of the user (with more details than the history) */
     public function index($i) {
 
       $user = Auth::user();

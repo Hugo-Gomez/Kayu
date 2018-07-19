@@ -20,7 +20,7 @@ class FormPrefController extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * Show the form pref of the user.
      *
      * @return \Illuminate\Http\Response
      */
@@ -31,7 +31,7 @@ class FormPrefController extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * When you send the form, the modifications on the database
      *
      * @return \Illuminate\Http\Response
      */

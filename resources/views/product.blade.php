@@ -105,15 +105,11 @@
                           <p>Aucun additifs n'a été spécifié pour ce produit</p>
                         @endif
                     </div>
-
-
-
                   </div>
                 </div>
 
                 <div class="x_content product-content"><hr class="myhr"></div>
                 <div class="x_content product-content">
-
                   <div class="product-nutrients">
                       <p class="bold">Nutriments</p>
                       @if ( $inputs['nutrient_levels'] )

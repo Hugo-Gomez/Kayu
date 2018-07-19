@@ -19,7 +19,7 @@ class ScanHistoryController extends Controller
     }
 
     /**
-     * Show the application history.
+     * Show the application history. All history of the user
      *
      * @return \Illuminate\Http\Response
      */
